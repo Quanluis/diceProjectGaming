@@ -16,5 +16,15 @@ namespace diceProjectGaming
         {
             InitializeComponent();
         }
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hello world");
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

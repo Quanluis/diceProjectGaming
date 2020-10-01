@@ -33,17 +33,21 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
-            this.scoreboxOne = new System.Windows.Forms.TextBox();
-            this.scoreboxTwo = new System.Windows.Forms.TextBox();
+            this.playerOneScorebox = new System.Windows.Forms.TextBox();
+            this.playerTwoScorebox = new System.Windows.Forms.TextBox();
             this.scoreLabelOne = new System.Windows.Forms.Label();
             this.scoreLabelTwo = new System.Windows.Forms.Label();
             this.playerOneLabel = new System.Windows.Forms.Label();
             this.playerTwoLabel = new System.Windows.Forms.Label();
-            this.rollOne = new System.Windows.Forms.Button();
-            this.roleTwo = new System.Windows.Forms.Button();
+            this.roleTwoButton = new System.Windows.Forms.Button();
             this.diceValueLabel = new System.Windows.Forms.Label();
             this.diceValue = new System.Windows.Forms.Label();
+            this.roleOneButton = new System.Windows.Forms.Button();
+            this.diceOne = new System.Windows.Forms.PictureBox();
+            this.diceTwo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diceOne)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diceTwo)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -87,19 +91,19 @@
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
-            // scoreboxOne
+            // playerOneScorebox
             // 
-            this.scoreboxOne.Location = new System.Drawing.Point(249, 248);
-            this.scoreboxOne.Name = "scoreboxOne";
-            this.scoreboxOne.Size = new System.Drawing.Size(100, 20);
-            this.scoreboxOne.TabIndex = 5;
+            this.playerOneScorebox.Location = new System.Drawing.Point(249, 248);
+            this.playerOneScorebox.Name = "playerOneScorebox";
+            this.playerOneScorebox.Size = new System.Drawing.Size(100, 20);
+            this.playerOneScorebox.TabIndex = 5;
             // 
-            // scoreboxTwo
+            // playerTwoScorebox
             // 
-            this.scoreboxTwo.Location = new System.Drawing.Point(515, 248);
-            this.scoreboxTwo.Name = "scoreboxTwo";
-            this.scoreboxTwo.Size = new System.Drawing.Size(100, 20);
-            this.scoreboxTwo.TabIndex = 6;
+            this.playerTwoScorebox.Location = new System.Drawing.Point(515, 248);
+            this.playerTwoScorebox.Name = "playerTwoScorebox";
+            this.playerTwoScorebox.Size = new System.Drawing.Size(100, 20);
+            this.playerTwoScorebox.TabIndex = 6;
             // 
             // scoreLabelOne
             // 
@@ -137,23 +141,16 @@
             this.playerTwoLabel.TabIndex = 11;
             this.playerTwoLabel.Text = "Player two";
             // 
-            // rollOne
+            // roleTwoButton
             // 
-            this.rollOne.Location = new System.Drawing.Point(249, 174);
-            this.rollOne.Name = "rollOne";
-            this.rollOne.Size = new System.Drawing.Size(75, 23);
-            this.rollOne.TabIndex = 12;
-            this.rollOne.Text = "Press to roll!";
-            this.rollOne.UseVisualStyleBackColor = true;
-            // 
-            // roleTwo
-            // 
-            this.roleTwo.Location = new System.Drawing.Point(515, 174);
-            this.roleTwo.Name = "roleTwo";
-            this.roleTwo.Size = new System.Drawing.Size(75, 23);
-            this.roleTwo.TabIndex = 13;
-            this.roleTwo.Text = "Press to roll!";
-            this.roleTwo.UseVisualStyleBackColor = true;
+            this.roleTwoButton.Enabled = false;
+            this.roleTwoButton.Location = new System.Drawing.Point(515, 174);
+            this.roleTwoButton.Name = "roleTwoButton";
+            this.roleTwoButton.Size = new System.Drawing.Size(75, 23);
+            this.roleTwoButton.TabIndex = 13;
+            this.roleTwoButton.Text = "Press to roll!";
+            this.roleTwoButton.UseVisualStyleBackColor = true;
+            this.roleTwoButton.Click += new System.EventHandler(this.roleTwoButton_Click);
             // 
             // diceValueLabel
             // 
@@ -173,21 +170,50 @@
             this.diceValue.TabIndex = 15;
             this.diceValue.Text = "9";
             // 
+            // roleOneButton
+            // 
+            this.roleOneButton.Enabled = false;
+            this.roleOneButton.Location = new System.Drawing.Point(249, 174);
+            this.roleOneButton.Name = "roleOneButton";
+            this.roleOneButton.Size = new System.Drawing.Size(75, 23);
+            this.roleOneButton.TabIndex = 16;
+            this.roleOneButton.Text = "Press to roll!";
+            this.roleOneButton.UseVisualStyleBackColor = true;
+            this.roleOneButton.Click += new System.EventHandler(this.roleOneButton_Click);
+            // 
+            // diceOne
+            // 
+            this.diceOne.Location = new System.Drawing.Point(308, 313);
+            this.diceOne.Name = "diceOne";
+            this.diceOne.Size = new System.Drawing.Size(74, 62);
+            this.diceOne.TabIndex = 17;
+            this.diceOne.TabStop = false;
+            // 
+            // diceTwo
+            // 
+            this.diceTwo.Location = new System.Drawing.Point(428, 313);
+            this.diceTwo.Name = "diceTwo";
+            this.diceTwo.Size = new System.Drawing.Size(74, 62);
+            this.diceTwo.TabIndex = 18;
+            this.diceTwo.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.diceTwo);
+            this.Controls.Add(this.diceOne);
+            this.Controls.Add(this.roleOneButton);
             this.Controls.Add(this.diceValue);
             this.Controls.Add(this.diceValueLabel);
-            this.Controls.Add(this.roleTwo);
-            this.Controls.Add(this.rollOne);
+            this.Controls.Add(this.roleTwoButton);
             this.Controls.Add(this.playerTwoLabel);
             this.Controls.Add(this.playerOneLabel);
             this.Controls.Add(this.scoreLabelTwo);
             this.Controls.Add(this.scoreLabelOne);
-            this.Controls.Add(this.scoreboxTwo);
-            this.Controls.Add(this.scoreboxOne);
+            this.Controls.Add(this.playerTwoScorebox);
+            this.Controls.Add(this.playerOneScorebox);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.exitButton);
@@ -195,6 +221,8 @@
             this.Name = "Form1";
             this.Text = "Dice Game";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diceOne)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diceTwo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,16 +233,18 @@
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.TextBox scoreboxOne;
-        private System.Windows.Forms.TextBox scoreboxTwo;
+        private System.Windows.Forms.TextBox playerOneScorebox;
+        private System.Windows.Forms.TextBox playerTwoScorebox;
         private System.Windows.Forms.Label scoreLabelOne;
         private System.Windows.Forms.Label scoreLabelTwo;
         private System.Windows.Forms.Label playerOneLabel;
         private System.Windows.Forms.Label playerTwoLabel;
-        private System.Windows.Forms.Button rollOne;
-        private System.Windows.Forms.Button roleTwo;
+        private System.Windows.Forms.Button roleTwoButton;
         private System.Windows.Forms.Label diceValueLabel;
         private System.Windows.Forms.Label diceValue;
+        private System.Windows.Forms.Button roleOneButton;
+        private System.Windows.Forms.PictureBox diceOne;
+        private System.Windows.Forms.PictureBox diceTwo;
     }
 }
 

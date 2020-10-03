@@ -1,9 +1,11 @@
-﻿using System;
+﻿using diceProjectGaming.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,16 +22,14 @@ namespace diceProjectGaming
 
         // Global variables
 
-        int winner = 10;
+        int winner = 50;
         int playerOneRoll;
         int playerTwoRoll;
         int playerOneScore;
-        static int playerTwoScore;
+        int playerTwoScore;
         
-
         private void startButton_Click(object sender, EventArgs e)
         {
-
 
             MessageBox.Show("Welcome to the game, player one rolls first. Reach 50 points to win!");
 
@@ -46,6 +46,32 @@ namespace diceProjectGaming
             Random rnd = new Random();
 
             playerOneRoll = rnd.Next(1, 7);
+
+            // Dice labels 
+
+            if(playerOneRoll == 1)
+            {
+                diceOne.ImageLocation = @"C:\Users\Luis\source\repos\diceProjectGaming\Resources\Die1.bmp";
+            } else if (playerOneRoll == 2)
+            {
+                diceOne.ImageLocation = @"C:\Users\Luis\source\repos\diceProjectGaming\Resources\Die2.bmp";
+            }
+            else if (playerOneRoll == 3)
+            {
+                diceOne.ImageLocation = @"C:\Users\Luis\source\repos\diceProjectGaming\Resources\Die3.bmp";
+            }
+            else if (playerOneRoll == 4)
+            {
+                diceOne.ImageLocation = @"C:\Users\Luis\source\repos\diceProjectGaming\Resources\Die4.bmp";
+            }
+            else if (playerOneRoll == 5)
+            {
+                diceOne.ImageLocation = @"C:\Users\Luis\source\repos\diceProjectGaming\Resources\Die5.bmp";
+            }
+            else if (playerOneRoll == 6)
+            {
+                diceOne.ImageLocation = @"C:\Users\Luis\source\repos\diceProjectGaming\Resources\Die6.bmp";
+            }
 
             diceRoll.Text = playerOneRoll.ToString();
 
@@ -70,6 +96,34 @@ namespace diceProjectGaming
 
             playerTwoRoll = rnd.Next(1, 7);
 
+
+            // Dice labels 
+
+            if (playerTwoRoll == 1)
+            {
+                diceOne.ImageLocation = @"C:\Users\Luis\source\repos\diceProjectGaming\Resources\Die1.bmp";
+            }
+            else if (playerTwoRoll == 2)
+            {
+                diceOne.ImageLocation = @"C:\Users\Luis\source\repos\diceProjectGaming\Resources\Die2.bmp";
+            }
+            else if (playerTwoRoll == 3)
+            {
+                diceOne.ImageLocation = @"C:\Users\Luis\source\repos\diceProjectGaming\Resources\Die3.bmp";
+            }
+            else if (playerTwoRoll == 4)
+            {
+                diceOne.ImageLocation = @"C:\Users\Luis\source\repos\diceProjectGaming\Resources\Die4.bmp";
+            }
+            else if (playerTwoRoll == 5)
+            {
+                diceOne.ImageLocation = @"C:\Users\Luis\source\repos\diceProjectGaming\Resources\Die5.bmp";
+            }
+            else if (playerTwoRoll == 6)
+            {
+                diceOne.ImageLocation = @"C:\Users\Luis\source\repos\diceProjectGaming\Resources\Die6.bmp";
+            }
+
             diceRoll.Text = playerTwoRoll.ToString();
 
             playerTwoScore = playerTwoScore + playerTwoRoll;
@@ -82,7 +136,6 @@ namespace diceProjectGaming
                 roleOneButton.Enabled = false;
             }
         
-
         }
         private void exitButton_Click(object sender, EventArgs e)
         {

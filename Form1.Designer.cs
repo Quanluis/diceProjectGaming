@@ -189,6 +189,7 @@
             this.diceOne.Location = new System.Drawing.Point(308, 313);
             this.diceOne.Name = "diceOne";
             this.diceOne.Size = new System.Drawing.Size(74, 62);
+            this.diceOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.diceOne.TabIndex = 17;
             this.diceOne.TabStop = false;
             // 

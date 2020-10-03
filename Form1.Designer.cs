@@ -198,6 +198,7 @@
             this.diceTwo.Location = new System.Drawing.Point(428, 313);
             this.diceTwo.Name = "diceTwo";
             this.diceTwo.Size = new System.Drawing.Size(74, 62);
+            this.diceTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.diceTwo.TabIndex = 18;
             this.diceTwo.TabStop = false;
             // 
